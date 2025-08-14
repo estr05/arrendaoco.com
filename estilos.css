@@ -1,0 +1,261 @@
+
+/* latin */
+@font-face {
+  font-family: 'Cormorant';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url(./assets/fonds/H4c0BXOCl9bbnla_nHIq6oGzilJm9otsA9kQdfBa7yWq.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root{
+   --t_encabezado: 'Cormorant';
+   --t_texto: 'Arial', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: var(--t_texto);
+  background-color: white;
+}
+
+header {
+  background:  url("img/home1.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Cormorant';
+}
+
+.titulo {
+  font-family: 'Cormorant';
+  font-size: clamp(6rem, 2vw, 2rem);
+  color: white;
+  margin: 0;
+}
+
+.subtitulo {
+  color:white;  
+  font-size: 55px;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.inmuebles-section {
+  background-color: #ffffff;
+  text-align: center;
+  font-family: var(--t_texto);
+  color:rgb(255, 255, 255);
+}
+
+/* Nuevas clases para la sección de inmuebles */
+.inmuebles-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 15px;
+}
+
+.inmuebles-title {
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-size: 50px;
+    letter-spacing: 5px;
+    margin-bottom: 1.5rem;
+}
+
+
+/* --- Reemplazo de row y col de Bootstrap con Flexbox Grid --- */
+.inmuebles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.inmueble-card {
+    flex-basis: calc(33.333% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente dentro de la tarjeta */
+}
+
+@media (max-width: 992px) {
+    .inmueble-card {
+        flex-basis: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 576px) {
+    .inmueble-card {
+        flex-basis: 100%;
+    }
+}
+/* --- Fin Reemplazo de row y col --- */
+
+
+/* Las clases .imagenes y .imagenes img son para la sección de "otras imágenes", no para los inmuebles principales.
+   Si las imágenes del apartado inmuebles se refieren a las de las tarjetas, se controlan con .image-wrapper y .image-overlay-container.
+*/
+.imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.imagenes img {
+  width: 350px;
+  height: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  height: auto;
+}
+
+.nosotros{
+  text-align: center;
+  background-color: #4a9c81;
+  padding: 40px 20px;
+}
+
+.nosotros h2 {
+  color: rgb(75, 74, 74);
+  margin-bottom: 20px;
+}
+
+.nosotros p {
+  color: rgb(75, 74, 74);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pie_pag{
+  margin: 0;
+}
+/*agregado Fati*/
+.btn-inmueble-custom {
+    background-color: #30634f;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: var(--t_texto);
+    width: 100%; /* Asegura que el botón ocupe todo el ancho de image-overlay-container */
+    margin-bottom: 15px; /* Añade espacio entre el botón y la imagen */
+  }
+
+  .btn-inmueble-custom:hover {
+    background-color: #203c31;
+    transform: scale(1.05);
+  }
+
+.image-overlay-container {
+  /* Este contenedor ahora solo se encarga de que sus hijos se centren y definan el ancho máximo */
+  width: 100%; /* Ocupa el 100% del ancho de .inmueble-card */
+  max-width: 350px; /* Limita el ancho máximo para el conjunto botón + imagen */
+  display: flex; /* Lo convertimos en flexbox */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin: 0 auto; /* Centra este contenedor dentro de .inmueble-card */
+}
+
+.image-wrapper { /* NUEVA CLASE: Envuelve la imagen para aplicar centrado directo a ella */
+    width: 100%; /* Ocupa el 100% del ancho de image-overlay-container */
+    display: flex; /* Para usar flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+}
+
+.image-overlay-container img {
+  width: 100%; /* La imagen ocupa el 100% del ancho de .image-wrapper */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/*redes*/
+.redes-sociales {
+  background: #203c31;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.redes-sociales h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: var(--t_texto);
+
+}
+
+.iconos-redes a {
+  margin: 0 15px;
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.iconos-redes a:hover {
+  color: #30634f;
+}
+/*contacto*/
+.promo-contacto {
+  background: #f5f5f5;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.promo-contacto h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: rgb(75, 74, 74);
+  font-weight: bold;
+}
+
+.promo-contacto p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: rgb(75, 74, 74);
+}
+/*boton*/
+.btn-promo {
+  display: inline-block;
+  background-color: #30634f;
+  color: rgb(255, 255, 255);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-promo:hover {
+  background-color: #203c31;
+  color: white; 
+}
+
+/*Estilo para administardor*/
+.tabla-estilo {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  text-align: left;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tabla-estilo th,
+.tabla-estilo td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}

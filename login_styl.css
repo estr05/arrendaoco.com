@@ -1,0 +1,368 @@
+:root {
+    --fuenteParrafos: 'Arial', serif; /* Asegúrate de que esta fuente esté disponible o ajusta */
+    --gris: #d9d9d9;
+    --blanco: #ffffff;
+    --negro: #203c31; /* Un verde oscuro para tu tema */
+    --acento: #30634f; /* Un verde más claro/cálido para acentos */
+    --sombra-clara: rgba(54, 62, 81, 0.3);
+    --sombra-foco: rgba(48, 99, 79, 0.2);
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    color: var(--negro); /* Color de texto general */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura del viewport */
+    display: flex;
+    flex-direction: column; /* Permite que el contenido y el footer se organicen verticalmente */
+    background-color: var(--blanco); /* Fondo general de la página */
+}
+
+/* Asegúrate de que los estilos de tu navbar.css no entren en conflicto con body/main-container */
+
+h2 {
+    font-family: var(--fuenteParrafos);
+    font-weight: 700;
+    font-size: 2rem; /* Tamaño de fuente responsivo */
+    color: var(--negro);
+}
+
+/* El .p de tu CSS original parece demasiado grande, ajustado para ser más estándar */
+p { /* Cambiado de .p a p para afectar a todos los párrafos, ajusta si es necesario un selector más específico */
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #30634f; /* Mejora la legibilidad */
+}
+
+strong {
+    color: var(--negro); /* Ajustado a negro para consistencia, o podrías usar var(--acento) */
+    font-size: 1.1rem; /* Mantener la consistencia con el párrafo */
+}
+
+/* Nuevo Contenedor Principal para las dos columnas */
+.main-container {
+    display: flex;
+    flex-grow: 1; /* Permite que este contenedor ocupe el espacio disponible */
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para el diseño de dos columnas */
+    margin: 40px auto; /* Centra el contenedor y le da un margen superior/inferior */
+    box-shadow: 0px 15px 40px var(--sombra-clara); /* Sombra atractiva para el contenedor principal */
+    border-radius: 25px; /* Bordes redondeados para todo el bloque */
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente a los hijos */
+    min-height: 550px; /* Altura mínima para que se vea bien */
+}
+
+/* Sección Izquierda: Imagen o Texto Llamativo */
+.left-section {
+    flex: 1; /* Ocupa una parte igual del espacio horizontal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+/* Color de fondo para la sección izquierda */
+    color: var(--blanco); /* Color de texto para la sección izquierda */
+    text-align: center;
+    position: relative; /* Para posibles decoraciones si se añaden */
+}
+
+.left-content {
+    max-width: 400px; /* Limita el ancho del contenido interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre elementos */
+}
+
+.representative-image {
+    max-width: 90%; /* Asegura que la imagen sea responsiva */
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+     /* Bordes redondeados para la imagen */
+    /* Sombra para la imagen */
+}
+
+.catchy-title {
+    font-family: 'Cormorant Upright', serif; /* Usando tu fuente Cormorant para el título */
+    font-size: 3.5rem; /* Tamaño grande para el título */
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--blanco); /* Color del título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Pequeña sombra para el texto */
+}
+
+.catchy-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--blanco);
+    opacity: 0.9;
+}
+
+/* Sección Derecha: Formulario de Registro */
+.login-section {
+    flex: 1; /* Ocupa una parte igual del espacio horizontal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--blanco); /* El fondo del formulario ahora es blanco */
+}
+
+.container {
+    width: 100%; /* El contenedor ahora ocupa el 100% de su sección flex */
+    max-width: 450px; /* Un poco más de espacio para el formulario si es necesario */
+    padding: 30px;
+    background-color: var(--gris); /* Fondo del formulario en gris */
+    border-radius: 15px; /* Bordes redondeados del formulario */
+    box-shadow: 0px 10px 25px var(--sombra-clara); /* Sombra para el formulario */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-wrapper {
+    width: 100%;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 2.2rem; /* Tamaño de encabezado ajustado */
+    margin-bottom: 10px;
+    color: var(--negro);
+}
+
+.form-header p {
+    color: var(--negro); /* Asegura que el texto del párrafo sea visible */
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.registration-form {
+    width: 100%;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px; /* Espacio entre los campos de formulario */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc; /* Borde más suave */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    font-size: 16px;
+    font-family: var(--fuenteParrafos);
+    background-color: var(--blanco);
+    transition: all 0.3s ease;
+    color: var(--negro); /* Color del texto de entrada */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--acento); /* Borde de enfoque con color de acento */
+    box-shadow: 0 0 0 3px var(--sombra-foco); /* Sombra de enfoque suave */
+}
+
+.form-group input::placeholder {
+    color: #888; /* Color del placeholder */
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 130px; /* Ancho mínimo para los botones */
+}
+
+.btn-primary {
+    background: var(--negro);
+    color: var(--blanco);
+}
+
+.btn-primary:hover {
+    background: var(--acento);
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--negro);
+    border: 2px solid var(--negro);
+}
+
+.btn-secondary:hover {
+    background: var(--negro);
+    color: var(--blanco);
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer (si lo tienes, asegúrate de que esté fuera del main-container si no quieres que sea parte del layout de dos columnas) */
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--negro);
+    padding: 20px 0;
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    background-color: var(--gris); /* Un color de fondo para el footer si es necesario */
+}
+
+.footer a {
+    color: var(--negro);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--acento);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Apila las secciones verticalmente */
+        margin: 20px auto; /* Ajusta margen */
+        padding: 0; /* Elimina padding para las secciones internas */
+        box-shadow: none; /* Elimina la sombra del contenedor principal cuando se apila */
+        border-radius: 0; /* Elimina bordes redondeados del contenedor principal */
+        min-height: auto;
+    }
+
+    .left-section {
+        border-radius: 15px 15px 0 0; /* Bordes redondeados en la parte superior al apilar */
+        padding: 25px;
+    }
+
+    .login-section {
+        padding: 25px;
+        border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior al apilar */
+        background-color: var(--blanco); /* Fondo de la sección de login */
+    }
+
+    .container {
+        border-radius: 15px; /* El contenedor del formulario siempre tiene bordes redondeados */
+        box-shadow: 0px 10px 25px var(--sombra-clara); /* Aplica la sombra al contenedor del formulario */
+        padding: 25px;
+    }
+
+    .catchy-title {
+        font-size: 2.5rem;
+    }
+
+    .catchy-text {
+        font-size: 1.2rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .form-group input {
+        padding: 12px;
+        
+    }
+
+    .button {
+        width: 100%; /* Botones ocupan todo el ancho en móvil */
+        max-width: 250px; /* Max-width para botones en móvil */
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-section,
+    .login-section {
+        padding: 20px;
+    }
+
+    .catchy-title {
+        font-size: 2rem;
+    }
+
+    .catchy-text {
+        font-size: 1rem;
+    }
+
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+.btn-promo {
+  display: inline-block;
+  background-color: #30634f;
+  color: rgb(255, 255, 255);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-promo:hover {
+  background-color: #203c31;
+  color: white; 
+}
+.form-control {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: var(--fuenteParrafos);
+    background-color: var(--blanco);
+    transition: all 0.3s ease;
+    color: var(--negro);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M2%200L0%202h4zm0%205L0%203h4z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 1em top 50%;
+    background-size: .65em auto;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--acento);
+    box-shadow: 0 0 0 3px var(--sombra-foco);
+}

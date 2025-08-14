@@ -1,0 +1,16 @@
+/* Estilo para contenedor general */
+.container .row {
+  margin-top: 30px;
+}
+
+/* Para asegurar que las imágenes se ajusten correctamente */
+.carousel-item img {
+  max-height: 450px;
+  object-fit: contain;
+}
+
+/* Personaliza el fondo de las flechas */
+.carousel-control-prev-icon::after,
+.carousel-control-next-icon::after {
+  color: rgb(88, 88, 88); /* Gris elegante */
+}

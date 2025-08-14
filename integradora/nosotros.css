@@ -1,0 +1,107 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #8ab3a5;
+            color: rgb(75, 74, 74);
+            text-align: justify;
+        }
+        
+        header {
+            background-color: #203c31;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #203c31;
+        }
+        :root{
+--fuente:'Cormorant Upright', serif;
+--t_texto: 'Arial', sans-serif;
+}
+.nosotros {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: white;
+  gap: 40px;
+  text-align: justify;
+;
+}
+
+.nosotros-contenido {
+  flex: 1 1 350px;
+  max-width: 600px;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+.nosotros-contenido h2 {
+  font-family: var(--fuente);
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color:black;
+}
+/*texto*/
+.nosotros-contenido p {
+  font-size: 1.5rem;
+  color:black;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+/*boton contactanos*/
+.btn-nosotros {
+  padding: 10px 25px;
+  background-color: #30634f;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-nosotros:hover {
+  background-color: #203c31;
+}
+
+.nosotros-img img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeInRight 1s ease-in-out;
+}
+/*redes*/
+.redes-sociales {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.redes-sociales h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: var(--t_texto);
+  
+}
+
+.iconos-redes a {
+  margin: 0 15px;
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.iconos-redes a:hover {
+  color: #8ab3a5;
+}

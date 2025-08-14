@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArrendaOco</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="./login_styl.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="./assets/js/jquery.min.js"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand-logo"><img src="img/logo.png" alt="imagenlogo" class="logo">ArrendaOco</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-links" id="navbarNavAltMarkup">
+                <a class="nav-item active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-item" href="nosotros.html">Nosotros</a>
+                <a class="nav-item" href="login_propietario.html">Registrarse</a>
+                <a class="nav-item" href="./login.html">Iniciar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container">
+        <section class="left-section">
+            <div class="left-content">
+                <img src="./img/reg.jpg" alt="Ilustración de Bienvenida" class="representative-image">
+                <h2>Registrate y comienza tu historia con nosotros</h2>
+                </div>
+        </section>
+
+        <section class="login-section" id="contact">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h2>¡Regístrate!</h2>
+                    </div>
+<style>
+    .form-group[type="number"]{
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .form-group[type="number"]::-webkit-outer-spin-button,
+    .form-group[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+    }
+</style>
+                    <form class="registration-form" method="post" action="alta_usuario.php">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input name="user" type="text" id="user" placeholder="Crea un usuario" required>
+                                <span id="resultado"></span>
+                            </div>
+                              <div class="form-group">
+                                <input name="pass" id="pass" type="password" placeholder="Crea una contraseña" required> </div>
+                            <div class="form-group">
+                                <input name="nombre" type="text" id="nombre" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="direccion" type="text" id="direccion" placeholder="Ingrese su dirección" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="tel" type="number" id="tel"  placeholder="Telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <input name="correo" type="email" id="correo"  placeholder="Correo" required>
+                            </div>
+                            <label for="bandera">Tipo de usuario:</label>
+                            <select name="bandera" id="bandera" class="form-control" required>
+                            <option value="2">Propietario</option>
+                            <option value="3">Inquilino</option>
+                            </select>
+                               
+                       
+                    
+
+                            <div class="button-group">
+                            <button type="submit" class="button btn-primary">Enviar</button>
+                            <button type="button" class="button btn-secondary" onclick="window.location.href='index.html';">Cancelar</button>
+                        </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+     <script>
+  //funcion para validar nombre de usuario existente
+$(document).ready(function(){
+  var consulta ="";
+  //hacemos focus
+  $("#user").focus();
+  //comprobamos si se pulsa la tecla
+  $("#user").keyup(function(e){
+//obtenemos texto introducido en el campo
+if(consulta != $("#user").val()){
+  $("#resultado").empty();
+}
+consulta = $("#user").val();
+//hace la busqueda
+$("#resultado").delay(1300).queue(function(n){
+  //$("#resultado").html('<img src="ajax-loader.gif" />');
+            $.ajax({
+            type: "POST",
+            url: "vistas/usuarios/comprobar.php",
+            data: "b=" +consulta,
+            dataType: "html",
+            error: function(){
+      //alert("error peticion ajax");
+            },
+            success: function(data){
+            $("#resultado").html(data);
+            n();
+          }
+        });
+      });
+    });
+  });
+  </script>
+    
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbarLinks = document.querySelector('.navbar-links');
+
+            menuToggle.addEventListener('click', function() {
+                navbarLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

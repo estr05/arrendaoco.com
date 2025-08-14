@@ -1,0 +1,177 @@
+/* Este CSS está diseñado para ser incluido en la <head> de tu página principal. */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Fondo suave */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Si el body de tu layout principal ya maneja el flexbox para columnas,
+       estos estilos de body podrían ser innecesarios o necesitar ajuste.
+       Asumimos que el body de la página principal crea el contexto para el layout general. */
+}
+
+/* Estilos para el contenedor principal de esta sección (el bloque derecho) */
+.main-content-pane {
+    padding: 20px; /* Padding interno para el contenido de esta columna */
+    background-color: rgb(32, 65, 50); /* Fondo de la columna principal, si es diferente al body */
+    /* Ancho y centrado de este contenedor deben ser manejados por el CSS del layout principal */
+    /* max-width: 900px; /* Ejemplo de ancho máximo, ajusta según tu layout */
+    /* margin: 0 auto; /* Ejemplo de centrado, si es la única columna */
+}
+
+.page-title { /* Clase para el título principal "Perfiles de Usuarios" */
+    text-align: center; /* Alineado a la izquierda como en la imagen */
+    color: #c1c1aa;
+    margin-bottom: 25px;
+    font-size: 2em;
+    padding-left: 20px; /* Para que el título no quede pegado al borde del contenedor */
+}
+
+/* Contenedor principal que contendrá todas las tarjetas de perfil en una cuadrícula */
+.profiles-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 30px; /* Espacio entre las tarjetas de perfil */
+    width: 100%; /* Ocupa el 100% del ancho de su padre (.main-content-pane) */
+    max-width: 400px; /* Ajusta el ancho máximo de la cuadrícula si solo quieres una columna grande */
+    margin: 0 auto; /* Centra la cuadrícula de perfiles dentro de su contenedor si es más pequeña que el 100% */
+}
+
+/* Estilos para cada tarjeta de perfil individual */
+.profile-card-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-card {
+    padding: 0 20px 20px 20px; /* Padding interno de la tarjeta */
+    flex-grow: 1; /* Permite que la tarjeta se estire */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado de la tarjeta de perfil (Profile Details) */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7f7f7;
+    padding: 15px 20px;
+    margin: 0 -20px 20px -20px; /* Márgenes negativos para extender el header */
+    border-bottom: 1px solid #eee;
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-size: 1.1em;
+    color: #333;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #666;
+    padding: 0;
+}
+
+/* Sección de información del usuario */
+.user-info {
+    margin-bottom: 25px;
+    padding-top: 10px;
+}
+
+.user-info h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.user-info p {
+    margin: 5px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.user-info p i {
+    margin-right: 10px;
+    color: #888;
+    font-size: 1.1em;
+    min-width: 20px;
+}
+
+.user-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.user-info a:hover {
+    text-decoration: underline;
+}
+
+.about-me h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+.about-me p {
+    margin-bottom: 10px;
+    color: #555;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+/* Botones de acción (Editar, Eliminar) */
+.profile-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.action-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button {
+    background-color: #ffc107; /* Amarillo */
+    color: #333;
+}
+
+.delete-button {
+    background-color: #dc3545; /* Rojo */
+    color: white;
+}
+
+.action-button:hover {
+    opacity: 0.9;
+}
+
+.action-button i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}

@@ -1,0 +1,100 @@
+.usuario {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .icono {
+      font-size: 30px;
+      color: #333;
+    }
+
+    .menu-sesion {
+      display: none;
+      transition-delay: 2s;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      padding: 10px;
+      min-width: 120px;
+    }
+    .menu-sesion {
+  /* ... existing styles ... */
+  opacity: 0; /* Initially invisible */
+  visibility: hidden; /* Hide from screen readers and pointer events */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+.usuario:hover .menu-sesion {
+  opacity: 2; /* Fully visible on hover */
+  visibility: visible; /* Make it visible */
+  display: block; /* Keep display block to occupy space and allow interaction */
+}
+
+/* Add this to ensure it stays block even if opacity is 0 for the transition */
+.menu-sesion.show {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+    .menu-sesion a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 5px 10px;
+    }
+
+    .menu-sesion a:hover {
+      background-color: #f2f2f2;
+    }
+
+    /* Este hover aplica a todo el contenedor, incluyendo el menú */
+    .usuario:hover .menu-sesion {
+      display: block;
+    }
+body {
+      font-family: Arial, sans-serif;
+    }
+
+    .usuario {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .icono {
+      font-size: 30px;
+      color: #333;
+    }
+
+    .menu-sesion {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 100;
+      min-width: 120px;
+    }
+
+    .menu-sesion a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 5px 10px;
+    }
+
+    .menu-sesion a:hover {
+      background-color: #f2f2f2;
+    }
+
+    .usuario:hover .menu-sesion {
+      display: block;
+    }

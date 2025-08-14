@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - ArrendaOco</title>
+    <link rel="stylesheet" href="estilos.css"> 
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="login_styl.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+</head>
+<body>
+  <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="brand-logo"><img src="img/logo.png" alt="imagenlogo" class="logo">ArrendaOco</a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-links" id="navbarNavAltMarkup">
+                <a class="nav-item active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-item" href="nosotros.html">Nosotros</a>
+                <a class="nav-item" href="login_propietario.html">Registrarse</a>
+                <a class="nav-item" href="./login.html">Iniciar Sesión</a>
+            </div>
+        </div>
+    </nav>
+    <main class="main-container">
+        <section class="left-section">
+            <div class="left-content">
+                <img src="./img/u.png" alt="Ilustración de Inicio de Sesión" class="representative-image">
+                
+                </div>
+        </section>
+
+        <section class="login-section" id="contact">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h2>¡Inicia Sesión!</h2>
+                        <p>
+                            <strong>Accede a tu cuenta</strong>
+                        </p>
+                    </div>
+                    
+                    <form action="modulos/controladorLogin.php" class="registration-form" method="POST">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input name="pass" type="password" id="pass" placeholder="Contraseña" required>
+                            </div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="button btn-primary">Iniciar Sesión</button>
+                            <button type="button" class="button btn-secondary" onclick="window.location.href='index.html';">Cancelar</button>
+                        </div>
+                        
+                        <p style="color:var(--negro); text-align: center; margin-top: 20px;">
+                            ¿No tienes cuenta? <a href="login_propietario.html" style="color: var(--acento); text-decoration: none;">Regístrate aquí</a> <br>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+   
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navbarLinks = document.querySelector('.navbar-links');
+
+            menuToggle.addEventListener('click', function() {
+                navbarLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

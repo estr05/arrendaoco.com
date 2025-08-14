@@ -1,0 +1,115 @@
+:root{
+   --t_encabezado: "Cormorant Upright", serif;
+   --t_texto: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--t_texto);
+  background-color: white;
+  color: black;
+}
+
+
+/* En navbar.css o en un bloque <style> en tu HTML */
+#navmenu ul li span{
+  margin-left: 15px; /* Ajusta este valor según sea necesario para el espaciado deseado */
+   font-weight: bold;
+}
+
+/* Para apuntar específicamente a los elementos de nivel superior si es necesario, aunque lo anterior debería funcionar */
+#navmenu > ul > li{
+  margin-left: 15px; /* Ajusta según sea necesario */
+}
+
+/* Si deseas afectar solo el *primer* elemento después del logo, lo harías específicamente */
+#navmenu ul li:first-child {
+  margin-left: 0; /* O lo que quieras para el primer elemento */
+}
+.navbar {
+  background-color: #d9d9d9; /* cite: 2 */
+  padding: 10px 20px; /* cite: 2 */
+  position: relative; /* cite: 2 */
+}
+
+.navbar-container {
+  display: flex; /* cite: 2 */
+  justify-content: space-between; /* cite: 2 */
+  align-items: center; /* cite: 2 */
+  width: 100%; /* cite: 2 */
+  margin: 0; /* cite: 2 */
+}
+
+.logo {
+  height: 40px; /* cite: 2 */
+  width: auto; /* cite: 2 */
+  margin-right: 10px; /* cite: 2 */
+}
+
+.brand-logo {
+  font-size: 1.2rem; /* cite: 2 */
+  font-weight: bold; /* cite: 2 */
+  color: rgb(0, 0, 0); /* cite: 2 */
+  text-decoration: none; /* cite: 2 */
+  display: flex; /* cite: 2 */
+  align-items: center; /* cite: 2 */
+}
+
+.navbar-links {
+  display: flex; /* cite: 2 */
+  gap: 25px; /* cite: 2 */
+}
+
+.nav-item {
+  color: rgb(0, 0, 0); /* cite: 2 */
+  text-decoration: none; /* cite: 2 */
+  font-weight: bold; /* cite: 2 */
+  padding: 5px 0; /* cite: 2 */
+}
+
+/* Menú hamburguesa para móvil */
+.menu-toggle {
+  display: none; /* cite: 2 */
+  background: none; /* cite: 2 */
+  border: none; /* cite: 2 */
+  cursor: pointer; /* cite: 2 */
+  padding: 10px; /* cite: 2 */
+  z-index: 1001; /* cite: 2 */
+}
+
+.icon-bar {
+  display: block; /* cite: 2 */
+  width: 25px; /* cite: 2 */
+  height: 3px; /* cite: 2 */
+  background-color: rgb(0, 0, 0); /* cite: 2 */
+  margin: 5px 0; /* cite: 2 */
+  transition: all 0.3s ease; /* cite: 2 */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* cite: 2 */
+  }
+
+  .navbar-links {
+    display: none; /* cite: 2 */
+    flex-direction: column; /* cite: 2 */
+    position: absolute; /* cite: 2 */
+    top: 100%; /* cite: 2 */
+    left: 0; /* cite: 2 */
+    width: 100%; /* cite: 2 */
+    background-color: black; /* cite: 2 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* cite: 2 */
+    padding: 10px 20px; /* cite: 2 */
+    box-sizing: border-box; /* cite: 2 */
+  }
+
+  .navbar-links.active {
+    display: flex; /* cite: 2 */
+  }
+
+  .nav-item {
+    margin: 10px 0; /* cite: 2 */
+    text-align: center; /* cite: 2 */
+  }
+}
